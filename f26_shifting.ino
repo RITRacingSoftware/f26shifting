@@ -67,7 +67,7 @@ void loop() {
 //  }
 
   // Downshift if paddle is presed and hasn't shifted already for the press
-  if(digitalRead(DOWNSHIFT_PADDLE_PIN) == LOW)
+  if((!upshift_paddle_still_pressed) && (digitalRead(DOWNSHIFT_PADDLE_PIN) == LOW))
   {
     downshift();
     downshift_paddle_still_pressed = true;
